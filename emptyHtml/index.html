@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank page</title>
+</head>
+<body>
+    <h1 id="h1">fout</h1>
+</body>
+<script>
+
+const h1 = document.getElementById("h1")
+
+function capitalize(string) {
+    let allesBehalveEersteLetter = string.slice(1);
+    return string[0].toUpperCase(string) + allesBehalveEersteLetter.toLowerCase(allesBehalveEersteLetter);
+}
+h1.innerHTML = capitalize("HoI meNsEn")
+</script>
+</html>
