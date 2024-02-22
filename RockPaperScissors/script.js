@@ -3,7 +3,8 @@ function getComputerChoice() {
     return returns[Math.floor(Math.random() * 3)]
 }
 
-function playRound(computerSelection, playerSelection) {
+function playRound(computerSelection, playerInput) {
+    let playerSelection = playerInput.toLowerCase()
     if (computerSelection == playerSelection) {
         return "draw"
     } else if (computerSelection === "rock" && playerSelection === "scissors") {
@@ -17,4 +18,10 @@ function playRound(computerSelection, playerSelection) {
     }
 }
 
-console.log(playRound(getComputerChoice(), "rock"))
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        playRound(getComputerChoice(), prompt("Please enter your choice: "))
+    }
+}
+
+playGame()
