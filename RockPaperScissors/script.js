@@ -3,20 +3,18 @@ function getComputerChoice() {
     return returns[Math.floor(Math.random() * 3)]
 }
 
-let playerSelection = document.getElementById("input").innerText.toLowerCase
-
 function playRound(computerSelection, playerSelection) {
-    if (computerSelection !== playerSelection) {
+    if (computerSelection == playerSelection) {
         return "draw"
     } else if (computerSelection === "rock" && playerSelection === "scissors") {
         return "You lost!, " + computerSelection + " beats " + playerSelection
     } else if (computerSelection === "scissors" && playerSelection === "paper") {
         return "You lost!, " + computerSelection + " beats " + playerSelection
-    } else if (computerSelection === "paper" && playerSelection === "rock")
+    } else if (computerSelection === "paper" && playerSelection === "rock") {
         return "You lost!, " + computerSelection + " beats " + playerSelection
-    }else {
-        return "You lost!, " + playerSelection + " beats " + computerSelection
-    };
+    } else {
+        return "You won!, " + playerSelection + " beats " + computerSelection
+    }
 }
 
-console.log(playRound(getComputerChoice(), "scissors"))
+console.log(playRound(getComputerChoice(), "rock"))
