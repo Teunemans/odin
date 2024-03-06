@@ -1,21 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blank page</title>
-</head>
-<body>
-    <h1 id="h1">fout</h1>
-</body>
-<script>
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
 
-const h1 = document.getElementById("h1")
+      li button {
+        font-size: 12px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
 
-function lastLetter(string) {
-    return string[string.length - 1]
-}
-console.log(lastLetter("schwinglebob"))
+    <h1>My shopping list</h1>
 
-</script>
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+const ul = document.querySelectorAll("ul");
+const input = document.querySelectorAll("input")
+const button = document.querySelectorAll("button")
+
+button.addEventListener("click", function () {
+  let value = input.textContent;
+  input.textContent = ""
+})
+
+const list = document.createElement("li")
+const span = document.createElement("span")
+const button2 = document.createElement("button")
+list.appendChild(span, button2)
+
+    </script>
+  </body>
 </html>
