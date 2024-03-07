@@ -23,27 +23,35 @@
     <div>
       <label for="item">Enter a new item:</label>
       <input type="text" name="item" id="item">
-      <button>Add item</button>
+      <button id="addButton">Add item</button>
     </div>
 
     <ul>
 
     </ul>
+    <script defer>
+      const ul = document.querySelector("ul");
+const input = document.querySelector("input")
+const button = document.getElementById("addButton");
+      console.log(ul)
 
-    <script>
-const ul = document.querySelectorAll("ul");
-const input = document.querySelectorAll("input")
-const button = document.querySelectorAll("button")
-
-button.addEventListener("click", function () {
-  let value = input.textContent;
-  input.textContent = ""
+button.addEventListener("click", () => {
+  const value = input.value;
+  input.value = ""
 })
 
-const list = document.createElement("li")
+const listItem = document.createElement("li")
 const span = document.createElement("span")
 const button2 = document.createElement("button")
-list.appendChild(span, button2)
+listItem.appendChild(span)
+listItem.appendChild(button2)
+span.textContent = input.textContent
+button2.textContent = "Delete"
+ul.appendChild(listItem)
+
+button2.addEventListener("click", function () {
+
+})
 
     </script>
   </body>
