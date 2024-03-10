@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <style>
     html {
@@ -12,7 +12,21 @@
     }
 </style>
 <body>
-<h1>Enter your thing here</h1>
-<button onclick="playGame()">Go!</button>
+<h1>RPS</h1>
+
+<button id="Rock" onclick="roundButton('rock')">Rock</button>
+<button id="Paper" onclick="roundButton('paper')">Paper</button>
+<button id="scissors" onclick="roundButton('scissors')">Scissors</button>
+
+<p>
+    current score:
+    <br>
+    Your score: <span id="playerScore"></span>
+    <br>
+    Computer score: <span id="computerScore"></span>
+</p>
+<p>Result:</p>
+<div id="resultDiv"></div>
+
 </body>
 </html>

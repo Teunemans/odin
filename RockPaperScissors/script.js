@@ -1,28 +1,47 @@
+let playerScore = 0
+let computerScore = 0
+const playerScoreCounter = document.getElementById("playerScore")
+const computerScoreCounter = document.getElementById("computerScore")
+playerScoreCounter.textContent = String(playerScore)
+computerScoreCounter.textContent = String(computerScore)
+
 function getComputerChoice() {
-    returns = ["rock", "paper", "scissors"]
+    let returns = ["rock", "paper", "scissors"]
     return returns[Math.floor(Math.random() * 3)]
 }
 
+
 function playRound(computerSelection, playerInput) {
     let playerSelection = playerInput.toLowerCase()
+    playerScoreCounter.textContent = String(playerScore)
+    computerScoreCounter.textContent = String(computerScore)
     if (computerSelection === playerSelection) {
-        return "Draw, you both chose " + playerSelection + "!"
+        return "draw, you both chose " + playerSelection + "!"
     } else if (computerSelection === "rock" && playerSelection === "scissors") {
-        return "You lost! " + computerSelection + " beats " + playerSelection
+        computerScore++
+        return "you lost! " + computerSelection + " beats " + playerSelection
     } else if (computerSelection === "scissors" && playerSelection === "paper") {
-        return "You lost! " + computerSelection + " beats " + playerSelection
+        computerScore++
+        return "you lost! " + computerSelection + " beats " + playerSelection
     } else if (computerSelection === "paper" && playerSelection === "rock") {
-        return "You lost! " + computerSelection + " beats " + playerSelection
+        computerScore++
+        return "you lost! " + computerSelection + " beats " + playerSelection
     } else {
+        playerScore++
         return "You won! " + playerSelection + " beats " + computerSelection
     }
 }
 
-function playGame() {
-    for (let i = 0; i < 5; i++) {
-        let playerInput = prompt("Please enter your choice: ")
-        console.log(playRound(getComputerChoice(), playerInput))
+const resultDiv = document.getElementById("resultDiv")
+
+function checkScores() {
+    if (playerScore >= 5 || computerScore >= 5 && playerScore > computerScore) {
+        resultDiv.textContent = "You won!"
+    } else if (playerScore >= 5 || computerScore >= 5 && playerScore < computerScore) {
+        resultDiv.textContent = "The computer won :("
     }
 }
-
-playGame()
+function roundButton(input) {
+    resultDiv.textContent = playRound(getComputerChoice(), input)
+    checkScores()
+}
