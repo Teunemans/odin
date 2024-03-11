@@ -1,0 +1,19 @@
+html {
+    background-color: #1F1F1F;
+}
+body {
+    background-color: #1F1F1F;
+}
+.container {
+    display: flexbox;
+}
+div {
+    background-color: #1F1F1F;
+    border: #b89e9ef6 solid 1px;
+    :hover {
+        background-color: red;
+    }
+}
+h1 {
+    color: red;
+}
