@@ -1,0 +1,17 @@
+#container {
+    border: green 2px solid;
+    width: 600px;
+    height: 600px;
+    display: grid;
+    grid-template-rows: repeat(16, 20px);
+    grid-template-columns: repeat(16, 20px);
+}
+.grid {
+    text-align: center;
+    border: green 2px;
+}
+
+#textThing {
+    font-family: Arial, serif;
+    color: green;
+}

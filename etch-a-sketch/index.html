@@ -6,12 +6,32 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Etch-a-Sketch</title>
-    <script scr="script.js" defer></script>
-    <style rel="stylesheet" href="style.css"></style>
+    <script src="script.js" defer></script>
 </head>
 <body>
+<p id="textThing">
+    yo
+</p>
 <div id="container">
-
 </div>
 </body>
+<style>
+#container {
+    border: green 1px solid;
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-rows: repeat(16, 20px);
+    grid-template-columns: repeat(16, 20px);
+}
+.grid {
+    text-align: center;
+    border: green 2px;
+}
+
+#textThing {
+    font-family: Arial, serif;
+    color: green;
+}
+</style>
 </html>
